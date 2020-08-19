@@ -1,10 +1,10 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="navbar">
     <mat-toolbar-row>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="toggleSideBar()">
             <mat-icon>menu</mat-icon>
         </button>
 
-        <span>APP LOGO</span>
+        <span>SPA Example Dashboard</span>
 
         <div fxFlex fxLayout="row" fxLayoutAlign=flex-end>
             <ul fxLayout="row" fxLayoutGap="20px">
@@ -19,7 +19,11 @@
                     </button>
                 </li>
                 <li>
-                  menu
+                    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>person_outline</mat-icon></button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item><mat-icon>exit_to_app</mat-icon>Sign Out</button>
+                      
+                    </mat-menu>
                 </li>
             </ul>
         </div>
